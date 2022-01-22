@@ -7,7 +7,7 @@ const Main: FC = () => {
   console.log(cat);
 
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       <div>asd</div>
       <div>asd</div>
       <div>asd</div>
