@@ -3,10 +3,9 @@ interface IServiceHeader {
   title: string;
 }
 
-export interface IHeader {
+export interface HeaderServiceTypes {
   id: string;
   title: string;
   key: string;
   services?: IServiceHeader[];
-  error?: string;
 }

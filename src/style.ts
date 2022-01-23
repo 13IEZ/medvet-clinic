@@ -1,4 +1,6 @@
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+import Container from '@mui/material/Container';
 import FuturaNewReg from 'assets/fonts/FuturaNewBook-Reg.ttf';
 import FuturaNewBold from 'assets/fonts/FuturaNewBold-Reg.ttf';
 import SchoolbookBold from 'assets/fonts/schoolbook-bold-cyrillic.ttf';
@@ -25,9 +27,13 @@ export const GlobalStyles = css`
     src: url(${SchoolbookBold}) format('truetype');
   }
 
-  * {
+  body {
     font-size: 100%;
     color: #59443f;
     background: #fffefe;
   }
+`;
+
+export const StyledContainer = styled(Container)`
+  max-width: 110rem;
 `;
