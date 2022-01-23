@@ -6,7 +6,7 @@ import {
   EnhancedStore,
   MiddlewareArray,
 } from '@reduxjs/toolkit';
-import { headerApi } from 'services/HeaderService';
+import { headerApi } from 'store/services/HeaderService';
 
 const rootReducer = combineReducers({
   [headerApi.reducerPath]: headerApi.reducer,
