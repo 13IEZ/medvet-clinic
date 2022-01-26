@@ -16,7 +16,7 @@ const AppToolbarItem: FC<IAppToolbarItem> = ({ path, title, services }) => {
     },
   });
 
-  const getToolbarItem = () => {
+  const getToolbarItem: () => JSX.Element = () => {
     switch (path) {
       case 'services':
         return (

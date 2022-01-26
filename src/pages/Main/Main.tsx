@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
+import MainCarousel from 'pages/Main/components/MainCarousel/MainCarousel';
 
 const Main: FC = () => {
   return (
-    <div style={{ width: '100%' }}>
-      <div>asd</div>
-      <div>asd</div>
-      <div>asd</div>
-    </div>
+    <>
+      <MainCarousel />
+    </>
   );
 };
 
