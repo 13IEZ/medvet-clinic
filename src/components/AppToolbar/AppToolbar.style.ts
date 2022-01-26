@@ -9,6 +9,7 @@ export const StyledNavLink = styled(Link)`
   font-size: 1.25rem;
   line-height: 1.25rem;
   position: relative;
+
   &::before {
     content: url(${location_ic});
     left: -1.7rem;

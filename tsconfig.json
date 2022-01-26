@@ -20,7 +20,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "src/",
-    "noImplicitAny": true
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
   },
   "include": [
     "**/*.ts", "**/*.tsx", "src/"
