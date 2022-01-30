@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
-import { IStyledDots } from 'pages/Main/components/MainCarousel/components/CustomDots/CustomDots.types';
+
+interface IStyledDots {
+  active: boolean | undefined;
+}
 
 export const StyledDot = styled.div<IStyledDots>`
   font-family: 'Futura New Bold', serif;

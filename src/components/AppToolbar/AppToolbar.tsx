@@ -4,7 +4,7 @@ import logo from 'assets/images/logo.png';
 import { StyledContainer } from '../../style';
 import Grid from '@mui/material/Grid';
 import { headerApi } from 'store/services/HeaderService/HeaderService';
-import AppToolbarItem from 'components/AppToolbar/components/AppToolbarItem';
+import AppToolbarItem from 'components/AppToolbar/components/AppToolBarItem/AppToolbarItem';
 import { StyledNavLink } from 'components/AppToolbar/AppToolbar.style';
 import { Link } from 'react-router-dom';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -15,7 +15,7 @@ const AppToolbar: FC = () => {
   return (
     <header style={{ marginTop: '50px' }}>
       <nav>
-        <StyledContainer maxWidth={false}>
+        <StyledContainer maxWidth={false} width='110rem'>
           <Grid container justifyContent='space-between' alignItems='center'>
             <Box>
               <Link to='/'>
@@ -24,18 +24,9 @@ const AppToolbar: FC = () => {
             </Box>
             <Box>
               <Grid container gap={8}>
-                {headers ? (
-                  headers.map(elem => (
-                    <AppToolbarItem
-                      key={elem.key}
-                      path={elem.key}
-                      title={elem.title}
-                      services={elem.services ? elem.services : []}
-                    />
-                  ))
-                ) : (
-                  <CircularProgress />
-                )}
+                {headers
+                  ? headers.map(elem => <AppToolbarItem key={elem.key} item={elem} />)
+                  : !headers && !fetchError && <CircularProgress />}
 
                 {fetchError && (
                   <h2>

@@ -7,7 +7,7 @@ import CarouselChild from 'pages/Main/components/MainCarousel/components/Carouse
 import { Skeleton, Grid } from '@mui/material';
 
 const MainCarousel: FC = () => {
-  const { data: carouselData } = mainCarouselApi.useFetchCarouselDataQuery('');
+  const { data: carouselData, error: fetchError } = mainCarouselApi.useFetchCarouselDataQuery('');
 
   const responsive = {
     desktop: {
@@ -26,15 +26,8 @@ const MainCarousel: FC = () => {
         customDot={<CustomDots />}
         autoPlay
       >
-        {carouselData.map(item => (
-          <CarouselChild
-            key={item.id}
-            img={item.img}
-            inst={item.inst}
-            title={item.title}
-            whatsApp={item.whatsApp}
-            numbers={item.numbers}
-          />
+        {carouselData.map(elem => (
+          <CarouselChild key={elem.id} item={elem} />
         ))}
       </StyledCarousel>
     </main>
@@ -47,7 +40,7 @@ const MainCarousel: FC = () => {
       alignItems='center'
       sx={{ height: '90vh' }}
     >
-      <Grid item xs={4}>
+      <Grid item xs={2}>
         <Grid container direction='column' alignItems='center' gap={5}>
           <Skeleton variant='circular' height='4rem' width='4rem' />
           <Skeleton variant='circular' height='4rem' width='4rem' />
@@ -56,7 +49,7 @@ const MainCarousel: FC = () => {
           <Skeleton variant='circular' height='4rem' width='4rem' />
         </Grid>
       </Grid>
-      <Grid item xs={8} sx={{ height: '100%' }}>
+      <Grid item xs={10} sx={{ height: '100%' }}>
         <Grid container justifyContent='center' alignItems='center' sx={{ height: '100%' }}>
           <Skeleton variant='rectangular' width='95%' height='80%' sx={{ borderRadius: '3rem' }} />
         </Grid>

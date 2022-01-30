@@ -6,6 +6,10 @@ import FuturaNewBold from 'assets/fonts/FuturaNewBold-Reg.ttf';
 import SchoolbookBold from 'assets/fonts/schoolbook-bold-cyrillic.ttf';
 import SchoolbookCyr from 'assets/fonts/schoolbook-cyrillic.ttf';
 
+interface IStyledContainer {
+  width: string;
+}
+
 export const GlobalStyles = css`
   @font-face {
     font-family: 'Futura New Regular';
@@ -34,6 +38,6 @@ export const GlobalStyles = css`
   }
 `;
 
-export const StyledContainer = styled(Container)`
-  max-width: 110rem;
+export const StyledContainer = styled(Container)<IStyledContainer>`
+  max-width: ${(props): string => props.width};
 `;
