@@ -5,7 +5,11 @@ import whats_ic from 'assets/images/whats-full.png';
 import whats_hover from 'assets/images/whats-full-hover.png';
 import { Grid, Link } from '@mui/material';
 import { StyledIc } from 'components/SocialBar/SocialBar.style';
-import { ISocialBar } from 'components/SocialBar/SocialBar.types';
+
+interface ISocialBar {
+  inst: string;
+  whatsApp: number;
+}
 
 const SocialBar: FC<ISocialBar> = ({ inst, whatsApp }) => {
   return (

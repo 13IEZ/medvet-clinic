@@ -3,7 +3,7 @@ interface IServiceHeader {
   title: string;
 }
 
-export interface HeaderServiceTypes {
+export interface IHeaders {
   id: string;
   title: string;
   key: string;

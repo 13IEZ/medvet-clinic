@@ -9,10 +9,12 @@ import {
 } from '@reduxjs/toolkit';
 import { headerApi } from 'store/services/HeaderService/HeaderService';
 import { mainCarouselApi } from 'store/services/MainCarouselService/MainCarouselService';
+import { listOfServicesApi } from 'store/services/ListOfServices/ListOfServices';
 
 const rootReducer = combineReducers({
   [headerApi.reducerPath]: headerApi.reducer,
   [mainCarouselApi.reducerPath]: mainCarouselApi.reducer,
+  [listOfServicesApi.reducerPath]: listOfServicesApi.reducer,
 });
 
 export const setupStore: () => EnhancedStore<
@@ -23,7 +25,11 @@ export const setupStore: () => EnhancedStore<
   return configureStore({
     reducer: rootReducer,
     middleware: getDefaultMiddleware =>
-      getDefaultMiddleware().concat(headerApi.middleware, mainCarouselApi.middleware),
+      getDefaultMiddleware().concat(
+        headerApi.middleware,
+        mainCarouselApi.middleware,
+        listOfServicesApi.middleware
+      ),
   });
 };
 

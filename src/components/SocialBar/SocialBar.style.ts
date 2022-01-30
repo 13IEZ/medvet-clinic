@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
-import { IStyledIc } from 'components/SocialBar/SocialBar.types';
+
+interface IStyledIc {
+  ic: string;
+  icHover: string;
+}
 
 export const StyledIc = styled.div<IStyledIc>`
   width: 2.5rem;

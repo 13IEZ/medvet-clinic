@@ -1,13 +1,17 @@
 import React, { FC } from 'react';
 import { StyledNavButton } from 'components/Buttons/NavButtons/NavButtons.style';
-import { IAppToolbarItem } from 'components/AppToolbar/AppToolbar.types';
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { AppToolServiceLink } from 'components/AppToolbar/components/AppToolBartItem.style';
+import { AppToolServiceLink } from 'components/AppToolbar/components/AppToolBarItem/AppToolBartItem.style';
 import { Link } from 'react-router-dom';
+import { IHeaders } from 'store/services/HeaderService/HeaderService.types';
 
-const AppToolbarItem: FC<IAppToolbarItem> = ({ path, title, services }) => {
+interface IAppToolbarItem {
+  item: IHeaders;
+}
+
+const AppToolbarItem: FC<IAppToolbarItem> = ({ item }) => {
   const NoMaxWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} classes={{ popper: className }} />
   ))({
@@ -17,7 +21,7 @@ const AppToolbarItem: FC<IAppToolbarItem> = ({ path, title, services }) => {
   });
 
   const getToolbarItem: () => JSX.Element = () => {
-    switch (path) {
+    switch (item.key) {
       case 'services':
         return (
           <NoMaxWidthTooltip
@@ -31,21 +35,22 @@ const AppToolbarItem: FC<IAppToolbarItem> = ({ path, title, services }) => {
                   rowGap: 1,
                 }}
               >
-                {services.map(elem => (
-                  <AppToolServiceLink key={elem.key} to={elem.key}>
-                    {elem.title}
-                  </AppToolServiceLink>
-                ))}
+                {item.services &&
+                  item.services.map(elem => (
+                    <AppToolServiceLink key={elem.key} to={elem.key}>
+                      {elem.title}
+                    </AppToolServiceLink>
+                  ))}
               </Box>
             }
           >
-            <StyledNavButton>{title}</StyledNavButton>
+            <StyledNavButton>{item.title}</StyledNavButton>
           </NoMaxWidthTooltip>
         );
       default:
         return (
-          <Link to={path} style={{ textDecoration: 'none' }}>
-            <StyledNavButton>{title}</StyledNavButton>
+          <Link to={item.key} style={{ textDecoration: 'none' }}>
+            <StyledNavButton>{item.title}</StyledNavButton>
           </Link>
         );
     }
