@@ -6,7 +6,7 @@ import {
 } from 'pages/Main/components/MainCarousel/components/CarouselChild/CarouselChild.style';
 import MainButton from 'components/Buttons/MainButton/MainButton';
 import SocialBar from 'components/SocialBar/SocialBar';
-import { IMainCarousel } from 'store/services/MainCarouselService/MainCarouselService.types';
+import { IMainCarousel } from 'store/services/Main/MainCarouselService/MainCarouselService.types';
 
 interface CarouselChild {
   item: IMainCarousel;

@@ -7,14 +7,20 @@ import {
   Middleware,
   MiddlewareArray,
 } from '@reduxjs/toolkit';
-import { headerApi } from 'store/services/HeaderService/HeaderService';
-import { mainCarouselApi } from 'store/services/MainCarouselService/MainCarouselService';
-import { listOfServicesApi } from 'store/services/ListOfServices/ListOfServices';
+import { headerApi } from 'store/services/Main/HeaderService/HeaderService';
+import { mainCarouselApi } from 'store/services/Main/MainCarouselService/MainCarouselService';
+import { listOfServicesApi } from 'store/services/Main/ListOfServices/ListOfServices';
+import { mainHistoryApi } from 'store/services/Main/MainHistoryService/MainHistoryService';
+import { employeesCarouselApi } from 'store/services/Main/EmployeesCarouselService/EmployeesCarouselService';
+import { mainAchievementApi } from 'store/services/Main/MainAchievementService/MainAchievementService';
 
 const rootReducer = combineReducers({
   [headerApi.reducerPath]: headerApi.reducer,
   [mainCarouselApi.reducerPath]: mainCarouselApi.reducer,
   [listOfServicesApi.reducerPath]: listOfServicesApi.reducer,
+  [mainHistoryApi.reducerPath]: mainHistoryApi.reducer,
+  [employeesCarouselApi.reducerPath]: employeesCarouselApi.reducer,
+  [mainAchievementApi.reducerPath]: mainAchievementApi.reducer,
 });
 
 export const setupStore: () => EnhancedStore<
@@ -28,7 +34,10 @@ export const setupStore: () => EnhancedStore<
       getDefaultMiddleware().concat(
         headerApi.middleware,
         mainCarouselApi.middleware,
-        listOfServicesApi.middleware
+        listOfServicesApi.middleware,
+        mainHistoryApi.middleware,
+        employeesCarouselApi.middleware,
+        mainAchievementApi.middleware
       ),
   });
 };

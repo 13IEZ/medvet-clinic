@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Container from '@mui/material/Container';
+import { Container, Typography } from '@mui/material';
 import FuturaNewReg from 'assets/fonts/FuturaNewBook-Reg.ttf';
 import FuturaNewBold from 'assets/fonts/FuturaNewBold-Reg.ttf';
 import SchoolbookBold from 'assets/fonts/schoolbook-bold-cyrillic.ttf';
@@ -40,4 +40,10 @@ export const GlobalStyles = css`
 
 export const StyledContainer = styled(Container)<IStyledContainer>`
   max-width: ${(props): string => props.width};
+`;
+
+export const StyledSectionTitle = styled(Typography)`
+  font-family: 'Schoolbook Cyrillic', serif;
+  color: #080606;
+  font-size: 2.5rem;
 `;

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { mainCarouselApi } from 'store/services/MainCarouselService/MainCarouselService';
+import { mainCarouselApi } from 'store/services/Main/MainCarouselService/MainCarouselService';
 import CustomDots from 'pages/Main/components/MainCarousel/components/CustomDots/CustomDots';
 import 'react-multi-carousel/lib/styles.css';
 import { StyledCarousel } from 'pages/Main/components/MainCarousel/MainCarousel.style';

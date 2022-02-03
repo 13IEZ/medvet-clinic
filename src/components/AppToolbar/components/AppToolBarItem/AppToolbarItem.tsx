@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { AppToolServiceLink } from 'components/AppToolbar/components/AppToolBarItem/AppToolBartItem.style';
 import { Link } from 'react-router-dom';
-import { IHeaders } from 'store/services/HeaderService/HeaderService.types';
+import { IHeaders } from 'store/services/Main/HeaderService/HeaderService.types';
 
 interface IAppToolbarItem {
   item: IHeaders;

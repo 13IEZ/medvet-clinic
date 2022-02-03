@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import Box from '@mui/material/Box';
 import logo from 'assets/images/logo.png';
-import { StyledContainer } from '../../style';
+import { StyledContainer } from 'style/style';
 import Grid from '@mui/material/Grid';
-import { headerApi } from 'store/services/HeaderService/HeaderService';
+import { headerApi } from 'store/services/Main/HeaderService/HeaderService';
 import AppToolbarItem from 'components/AppToolbar/components/AppToolBarItem/AppToolbarItem';
 import { StyledNavLink } from 'components/AppToolbar/AppToolbar.style';
 import { Link } from 'react-router-dom';

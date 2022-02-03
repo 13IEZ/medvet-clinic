@@ -1,23 +1,23 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
-import { IHeaders } from 'store/services/HeaderService/HeaderService.types';
 import { fireStore } from 'settings/firebase';
 import { collection, getDocs } from '@firebase/firestore';
+import { IEmployeesCarousel } from 'store/services/Main/EmployeesCarouselService/EmployeesCarouselService.types';
 
-export const headerApi = createApi({
-  reducerPath: 'headerApi',
+export const employeesCarouselApi = createApi({
+  reducerPath: 'employeesCarouselService',
   baseQuery: fetchBaseQuery({
     baseUrl: 'medvet-3e10e-default-rtdb.firebaseio.com',
   }),
   endpoints: build => ({
-    fetchHeaders: build.query<IHeaders[], ''>({
+    fetchEmployeesCarousel: build.query<IEmployeesCarousel[], ''>({
       queryFn: async () => {
-        const headersCollectionRef = collection(fireStore, 'headers');
-        const response = await getDocs(headersCollectionRef);
+        const employeesCarouselCollectionRef = collection(fireStore, 'mainEmployes');
+        const response = await getDocs(employeesCarouselCollectionRef);
         const data = response.docs.map(doc => ({
           ...doc.data(),
           id: doc.id,
         }));
-        if (data.length) return { data: data as IHeaders[] };
+        if (data.length) return { data: data as IEmployeesCarousel[] };
         else
           return {
             error: {
