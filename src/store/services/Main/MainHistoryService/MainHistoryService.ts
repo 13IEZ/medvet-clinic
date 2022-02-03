@@ -1,20 +1,20 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
 import { fireStore } from 'settings/firebase';
 import { collection, getDocs } from '@firebase/firestore';
-import { IListOfServices } from 'store/services/ListOfServices/ListOfServices.types';
+import { IMainHistory } from 'store/services/Main/MainHistoryService/MainHistoryService.types';
 
-export const listOfServicesApi = createApi({
-  reducerPath: 'listOfServicesApi',
+export const mainHistoryApi = createApi({
+  reducerPath: 'mainHistoryApi',
   baseQuery: fetchBaseQuery({
     baseUrl: 'medvet-3e10e-default-rtdb.firebaseio.com',
   }),
   endpoints: build => ({
-    fetchListOfServices: build.query<IListOfServices[], ''>({
+    fetchHistoryData: build.query<IMainHistory, ''>({
       queryFn: async () => {
-        const listOfServicesCollectionRef = collection(fireStore, 'services');
-        const response = await getDocs(listOfServicesCollectionRef);
-        const data = response.docs.map(doc => ({ ...doc.data(), id: doc.id }));
-        if (data.length) return { data: data as IListOfServices[] };
+        const mainHistoryCollectionRef = collection(fireStore, 'mainCompaniesHistory');
+        const response = await getDocs(mainHistoryCollectionRef);
+        const data = response.docs[0].data();
+        if (data) return { data: data as IMainHistory };
         else
           return {
             error: {

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { IListOfServices } from 'store/services/ListOfServices/ListOfServices.types';
+import { IListOfServices } from 'store/services/Main/ListOfServices/ListOfServices.types';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import {

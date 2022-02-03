@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Main from 'pages/Main/Main';
 import CssBaseline from '@mui/material/CssBaseline';
-import { GlobalStyles } from 'style';
+import { GlobalStyles } from 'style/style';
 import { Route, Routes } from 'react-router';
 
 import { Global } from '@emotion/react';
