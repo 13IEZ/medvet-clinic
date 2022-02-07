@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
-import { IHeaders } from 'store/services/Main/HeaderService/HeaderService.types';
+import { IHeaders } from 'store/services/HeaderService/HeaderService.types';
 import { fireStore } from 'settings/firebase';
 import { collection, getDocs } from '@firebase/firestore';
 

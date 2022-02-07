@@ -13,7 +13,7 @@ const MainServices: FC = () => {
       <StyledContainer maxWidth={false} width='84.5rem'>
         <Grid
           container
-          justifyContent='center'
+          justifyContent='space-between'
           alignItems='center'
           columns={{ xs: 4, sm: 9, md: 12 }}
           sx={{ margin: '6rem 0' }}
