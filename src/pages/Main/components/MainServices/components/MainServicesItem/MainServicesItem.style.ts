@@ -1,19 +1,10 @@
-import { Card, Typography } from '@mui/material';
+import { Card } from '@mui/material';
 import styled from '@emotion/styled';
 
 interface IStyledCard {
   ic: string;
   ic_hover: string;
 }
-
-export const StyledTypography = styled(Typography)`
-  font-family: 'Schoolbook Cyrillic', serif;
-  color: #59443f;
-  font-size: 1.875rem;
-  line-height: 2.5rem;
-  margin: 0;
-  padding: 0;
-`;
 
 export const StyledCard = styled(Card)<IStyledCard>`
   height: 13.75rem;

@@ -17,5 +17,5 @@ export const StyledAchievementSubTitle = styled(Typography)`
 export const StyledImg = styled.img`
   position: absolute;
   right: 8%;
-  top: 78%;
+  top: 79%;
 `;

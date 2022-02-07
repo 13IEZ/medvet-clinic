@@ -10,6 +10,14 @@ interface IStyledContainer {
   width: string;
 }
 
+interface IStyledSubTitle {
+  primary?: string;
+}
+
+interface IStyledText {
+  color: string;
+}
+
 export const GlobalStyles = css`
   @font-face {
     font-family: 'Futura New Regular';
@@ -46,4 +54,20 @@ export const StyledSectionTitle = styled(Typography)`
   font-family: 'Schoolbook Cyrillic', serif;
   color: #080606;
   font-size: 2.5rem;
+`;
+
+export const StyledSubTitle = styled(Typography)<IStyledSubTitle>`
+  font-family: 'Schoolbook Cyrillic', serif;
+  color: ${(props): string => (props.primary ? '#59443f' : '#080606')};
+  font-size: 1.875rem;
+  line-height: 2.5rem;
+  margin: 0;
+  padding: 0;
+`;
+
+export const StyledText = styled(Typography)<IStyledText>`
+  font-family: 'Futura New Regular', serif;
+  color: ${(props): string => props.color};
+  font-size: 1.25rem;
+  line-height: 1.875rem;
 `;
