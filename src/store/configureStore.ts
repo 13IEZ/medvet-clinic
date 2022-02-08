@@ -16,8 +16,10 @@ import { mainAchievementApi } from 'store/services/Main/MainAchievementService/M
 import { mainAdvantagesApi } from 'store/services/Main/MainAdvantagesService/MainAdvantagesService';
 import { mainContactsApi } from 'store/services/Main/MainContactsService/MainContactsService';
 import { footerApi } from 'store/services/FooterService/FooterService';
+import notificationReducer from 'store/reducers/NotificationSlice';
 
 const rootReducer = combineReducers({
+  notificationReducer,
   [headerApi.reducerPath]: headerApi.reducer,
   [mainCarouselApi.reducerPath]: mainCarouselApi.reducer,
   [listOfServicesApi.reducerPath]: listOfServicesApi.reducer,

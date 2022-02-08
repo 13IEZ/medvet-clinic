@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router';
 import AppFooter from 'components/AppFooter/AppFooter';
 import { Global } from '@emotion/react';
 import AppToolbar from 'components/AppToolbar/AppToolbar';
+import Notification from 'components/Notification/Notification';
 
 const App: FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: FC = () => {
         <Route path='/' element={<Main />} />
       </Routes>
       <AppFooter />
+      <Notification />
     </>
   );
 };

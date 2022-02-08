@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import Box from '@mui/material/Box';
 import logo from 'assets/images/logo.png';
 import { StyledContainer } from 'style/style';
@@ -12,7 +12,7 @@ const AppToolbar: FC = () => {
   const { data: headers, error: fetchError } = headerApi.useFetchHeadersQuery('');
 
   return (
-    <header style={{ marginTop: '50px' }}>
+    <header style={{ height: '10vh', marginTop: '1rem' }}>
       <nav>
         <StyledContainer maxWidth={false} width='110rem'>
           <Grid container justifyContent='space-between' alignItems='center'>

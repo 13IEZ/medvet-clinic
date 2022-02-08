@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEventHandler } from 'react';
 import { Grid } from '@mui/material';
 import {
   MainTitle,
@@ -10,9 +10,10 @@ import { IMainCarousel } from 'store/services/Main/MainCarouselService/MainCarou
 
 interface CarouselChild {
   item: IMainCarousel;
+  handleModalAction: MouseEventHandler;
 }
 
-const CarouselChild: FC<CarouselChild> = ({ item }) => {
+const CarouselChild: FC<CarouselChild> = ({ item, handleModalAction }) => {
   return (
     <Grid
       container
@@ -26,7 +27,7 @@ const CarouselChild: FC<CarouselChild> = ({ item }) => {
       <Grid item xs={4} sx={{ height: '100%' }}>
         <Grid container direction='column' justifyContent='space-evenly' sx={{ height: '100%' }}>
           <MainTitle>{item.title}</MainTitle>
-          <MainButton />
+          <MainButton action={handleModalAction} title='ЗАПИСАТЬСЯ' />
           <SocialBar inst={item.inst} whatsApp={item.whatsApp} />
         </Grid>
       </Grid>
