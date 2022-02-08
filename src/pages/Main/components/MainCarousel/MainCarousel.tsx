@@ -1,13 +1,17 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { mainCarouselApi } from 'store/services/Main/MainCarouselService/MainCarouselService';
 import CustomDots from 'pages/Main/components/MainCarousel/components/CustomDots/CustomDots';
 import 'react-multi-carousel/lib/styles.css';
 import { StyledCarousel } from 'pages/Main/components/MainCarousel/MainCarousel.style';
 import CarouselChild from 'pages/Main/components/MainCarousel/components/CarouselChild/CarouselChild';
 import { Skeleton, Grid } from '@mui/material';
+import ContactsForm from 'components/ContactsForm/ContactsForm';
 
 const MainCarousel: FC = () => {
   const { data: carouselData, error: fetchError } = mainCarouselApi.useFetchCarouselDataQuery('');
+
+  const [isOpen, setIsOpen] = useState(false);
+  const handleModalAction = (): void => setIsOpen(!isOpen);
 
   const responsive = {
     desktop: {
@@ -27,9 +31,10 @@ const MainCarousel: FC = () => {
         autoPlay
       >
         {carouselData.map(elem => (
-          <CarouselChild key={elem.id} item={elem} />
+          <CarouselChild key={elem.id} item={elem} handleModalAction={handleModalAction} />
         ))}
       </StyledCarousel>
+      <ContactsForm open={isOpen} handleAction={handleModalAction} />
     </main>
   ) : (
     <Grid
