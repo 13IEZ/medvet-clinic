@@ -49,6 +49,7 @@ const MainEmployeesCarousel: FC<IEmployeesCarouselData> = ({ employeesCarouselDa
     <Carousel
       customRightArrow={<CustomRightArrow />}
       customLeftArrow={<CustomLeftArrow />}
+      draggable={false}
       partialVisible
       responsive={responsive}
       arrows
