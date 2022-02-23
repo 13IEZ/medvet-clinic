@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import Main from 'pages/Main/Main';
+import InProgress from 'pages/InProgress/InProgress';
 import CssBaseline from '@mui/material/CssBaseline';
 import { GlobalStyles } from 'style/style';
 import { Route, Routes } from 'react-router';
@@ -16,6 +17,7 @@ const App: FC = () => {
       <AppToolbar />
       <Routes>
         <Route path='/' element={<Main />} />
+        <Route path='/:id' element={<InProgress />} />
       </Routes>
       <AppFooter />
       <Notification />

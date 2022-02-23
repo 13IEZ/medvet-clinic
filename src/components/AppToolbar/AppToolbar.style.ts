@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Link from '@mui/material/Link';
+import { Link } from '@mui/material';
 import location_ic from 'assets/images/location-ic.png';
 import location_ic_hover from 'assets/images/location-ic-hover.png';
 

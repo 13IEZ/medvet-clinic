@@ -15,7 +15,7 @@ const AppToolbar: FC = () => {
     <header style={{ height: '10vh', marginTop: '1rem' }}>
       <nav>
         <StyledContainer maxWidth={false} width='110rem'>
-          <Grid container justifyContent='space-between' alignItems='center'>
+          <Grid container justifyContent='space-between' alignItems='center' wrap='nowrap'>
             <Box>
               {headers ? (
                 <Link to='/'>
@@ -26,8 +26,8 @@ const AppToolbar: FC = () => {
               )}
             </Box>
 
-            <Box>
-              <Grid container gap={8}>
+            <Box sx={{ width: '75%' }}>
+              <Grid container justifyContent='space-between' wrap='nowrap'>
                 {headers
                   ? headers.map(elem => <AppToolbarItem key={elem.key} item={elem} />)
                   : !headers &&

@@ -23,12 +23,14 @@ const MainCarousel: FC = () => {
   return carouselData ? (
     <main>
       <StyledCarousel
+        draggable={false}
         responsive={responsive}
         arrows={false}
         infinite={true}
         showDots
         customDot={<CustomDots />}
-        autoPlay
+        autoPlay={!isOpen}
+        autoPlaySpeed={6000}
       >
         {carouselData.map(elem => (
           <CarouselChild key={elem.id} item={elem} handleModalAction={handleModalAction} />
