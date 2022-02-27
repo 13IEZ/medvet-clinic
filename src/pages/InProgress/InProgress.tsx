@@ -6,7 +6,7 @@ import work_ic from 'assets/images/work-ic.png';
 
 const InProgress: FC = () => {
   return (
-    <section style={{ height: '60vh' }}>
+    <section style={{ height: '100vh' }}>
       <Grid
         container
         direction='column'
@@ -16,7 +16,9 @@ const InProgress: FC = () => {
         sx={{ height: '100%' }}
       >
         <img src={work_ic} alt='In progress icon' />
-        <StyledSubTitle>Страница находится в разработке ...</StyledSubTitle>
+        <StyledSubTitle sx={{ width: '90%', textAlign: 'center' }}>
+          Страница находится в разработке ...
+        </StyledSubTitle>
         <JumpButton title='Вернуться на главную' path='/' />
       </Grid>
     </section>

@@ -18,7 +18,7 @@ const MainAdvantages: FC = () => {
         ) : (
           !mainAdvantagesData &&
           !fetchError && (
-            <Skeleton variant='text' width='50%' height={80} sx={{ margin: '7rem auto 4rem' }} />
+            <Skeleton variant='text' width='50%' height={80} sx={{ margin: '5rem auto 4rem' }} />
           )
         )}
 
@@ -27,7 +27,6 @@ const MainAdvantages: FC = () => {
           justifyContent='space-between'
           alignItems='flex-start'
           rowSpacing={10}
-          columnSpacing={13}
           columns={{ xs: 4, sm: 10, md: 12 }}
         >
           {mainAdvantagesData

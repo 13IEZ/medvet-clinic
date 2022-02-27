@@ -11,7 +11,7 @@ interface IMainServiceItem {
 
 const MainServicesItem: FC<IMainServiceItem> = ({ item }) => {
   return (
-    <Grid item xs={4} sm={3} md={3}>
+    <Grid item xs={4} sm={4} md={3}>
       <Link to={item.path} style={{ textDecoration: 'none' }}>
         <StyledCard ic={item.ic} ic_hover={item.ic_hover}>
           <StyledSubTitle primary='primary' variant='h3'>

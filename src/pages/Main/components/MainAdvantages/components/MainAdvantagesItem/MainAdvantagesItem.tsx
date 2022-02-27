@@ -15,14 +15,14 @@ const MainAdvantagesItem: FC<IMainAdvantagesItem> = ({ item }) => {
       </Grid>
 
       <Grid item>
-        <Grid container direction='row' justifyContent='center' alignItems='center'>
-          <Grid item xs={4}>
-            <Grid container justifyContent='center'>
-              <img src={item.img} alt='advantages image' loading='lazy' decoding='async' />
+        <Grid container direction='row' alignItems='center' wrap='nowrap'>
+          <Grid item xs={3}>
+            <Grid container justifyContent='flex-start'>
+              <img src={item.img} alt='advantages image' />
             </Grid>
           </Grid>
 
-          <Grid item xs={8}>
+          <Grid item xs={9}>
             <StyledText color='#59443F'>{item.text}</StyledText>
           </Grid>
         </Grid>

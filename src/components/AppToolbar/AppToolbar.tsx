@@ -5,38 +5,45 @@ import { StyledContainer } from 'style/style';
 import { Grid, Skeleton } from '@mui/material';
 import { headerApi } from 'store/services/HeaderService/HeaderService';
 import AppToolbarItem from 'components/AppToolbar/components/AppToolBarItem/AppToolbarItem';
-import { StyledNavLink } from 'components/AppToolbar/AppToolbar.style';
+import AppToolBarMobile from 'components/AppToolbar/components/AppToolBarMobile/AppToolBarMobile';
+import {
+  StyledNavLink,
+  StyledImg,
+  StyledWideMenu,
+  StyledMobileMenu,
+  StyledLocationHolder,
+} from 'components/AppToolbar/AppToolbar.style';
 import { Link } from 'react-router-dom';
 
 const AppToolbar: FC = () => {
   const { data: headers, error: fetchError } = headerApi.useFetchHeadersQuery('');
 
   return (
-    <header style={{ height: '10vh', marginTop: '1rem' }}>
+    <header id='back-to-top-anchor' style={{ height: '10vh', marginTop: '1rem' }}>
       <nav>
         <StyledContainer maxWidth={false} width='110rem'>
           <Grid container justifyContent='space-between' alignItems='center' wrap='nowrap'>
             <Box>
               {headers ? (
                 <Link to='/'>
-                  <img src={logo} alt='Logotype' style={{ cursor: 'pointer' }} />
+                  <StyledImg src={logo} alt='Logotype' />
                 </Link>
               ) : (
                 !headers && !fetchError && <Skeleton variant='circular' width={100} height={100} />
               )}
             </Box>
 
-            <Box sx={{ width: '75%' }}>
-              <Grid container justifyContent='space-between' wrap='nowrap'>
+            <StyledWideMenu>
+              <Grid container justifyContent='space-around' wrap='nowrap'>
                 {headers
                   ? headers.map(elem => <AppToolbarItem key={elem.key} item={elem} />)
                   : !headers &&
                     !fetchError && (
                       <>
-                        <Skeleton variant='text' width={150} height={45} />
-                        <Skeleton variant='text' width={150} height={45} />
-                        <Skeleton variant='text' width={150} height={45} />
-                        <Skeleton variant='text' width={150} height={45} />
+                        <Skeleton variant='text' width={120} height={45} />
+                        <Skeleton variant='text' width={120} height={45} />
+                        <Skeleton variant='text' width={120} height={45} />
+                        <Skeleton variant='text' width={120} height={45} />
                       </>
                     )}
                 {fetchError && (
@@ -45,8 +52,9 @@ const AppToolbar: FC = () => {
                   </h2>
                 )}
               </Grid>
-            </Box>
-            <Box>
+            </StyledWideMenu>
+
+            <StyledLocationHolder>
               {headers ? (
                 <StyledNavLink
                   target='_blank'
@@ -60,7 +68,11 @@ const AppToolbar: FC = () => {
               ) : (
                 !headers && !fetchError && <Skeleton variant='text' width={150} height={45} />
               )}
-            </Box>
+            </StyledLocationHolder>
+
+            <StyledMobileMenu>
+              <AppToolBarMobile />
+            </StyledMobileMenu>
           </Grid>
         </StyledContainer>
       </nav>

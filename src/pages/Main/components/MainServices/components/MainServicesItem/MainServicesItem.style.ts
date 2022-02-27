@@ -8,7 +8,7 @@ interface IStyledCard {
 
 export const StyledCard = styled(Card)<IStyledCard>`
   height: 13.75rem;
-  max-width: 20rem;
+  width: 95%;
   border-radius: 1.25rem;
   border: 1px solid #fff;
   background-image: url(${(props): string => props.ic});
@@ -18,7 +18,6 @@ export const StyledCard = styled(Card)<IStyledCard>`
   cursor: pointer;
   transition: background-image 0.1s;
   transition-delay: 0.4s;
-  margin: 0.5rem 0.5rem;
 
   &:hover {
     border: 1px solid #59443f;

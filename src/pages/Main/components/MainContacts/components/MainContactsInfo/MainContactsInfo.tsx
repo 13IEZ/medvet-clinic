@@ -10,10 +10,10 @@ const MainContactsInfo: FC = () => {
   const { data: contactsData, error: fetchError } = mainContactsApi.useFetchContactsDataQuery('');
 
   return (
-    <Grid item>
+    <Grid item sx={{ margin: '0 auto' }}>
       <Grid container direction='column'>
         <Box>
-          <Grid container justifyContent='space-between' alignItems='center'>
+          <Grid container justifyContent='space-between' alignItems='center' wrap='nowrap'>
             <Grid item sx={{ marginRight: '2rem' }}>
               <img src={location} alt='location icon' />
             </Grid>
@@ -30,7 +30,7 @@ const MainContactsInfo: FC = () => {
                   <StyledText color='#59443F'>{contactsData.address}</StyledText>
                 </Link>
               ) : (
-                <Skeleton variant='text' height={50} width={250} />
+                <Skeleton variant='text' height={50} width={'100%'} />
               )}
             </Grid>
           </Grid>
@@ -56,7 +56,7 @@ const MainContactsInfo: FC = () => {
                   </Link>
                 ))
               ) : (
-                <Skeleton variant='text' height={50} width={250} />
+                <Skeleton variant='text' height={50} width={'100%'} />
               )}
             </Grid>
           </Grid>
@@ -71,7 +71,7 @@ const MainContactsInfo: FC = () => {
               {contactsData ? (
                 <StyledText color='#59443F'>{contactsData.timeWork}</StyledText>
               ) : (
-                <Skeleton variant='text' height={50} width={250} />
+                <Skeleton variant='text' height={50} width={'100%'} />
               )}
             </Grid>
           </Grid>

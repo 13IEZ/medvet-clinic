@@ -15,7 +15,7 @@ const MainCarousel: FC = () => {
 
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 360 },
+      breakpoint: { max: 3000, min: 0 },
       items: 1,
     },
   };
@@ -39,14 +39,7 @@ const MainCarousel: FC = () => {
       <ContactsForm open={isOpen} handleAction={handleModalAction} />
     </main>
   ) : (
-    <Grid
-      container
-      direction='row'
-      wrap='nowrap'
-      justifyContent='center'
-      alignItems='center'
-      sx={{ height: '90vh' }}
-    >
+    <Grid container direction='row' wrap='nowrap' justifyContent='center' alignItems='center'>
       <Grid item xs={2}>
         <Grid container direction='column' alignItems='center' gap={5}>
           <Skeleton variant='circular' height='4rem' width='4rem' />

@@ -8,6 +8,7 @@ import AppFooter from 'components/AppFooter/AppFooter';
 import { Global } from '@emotion/react';
 import AppToolbar from 'components/AppToolbar/AppToolbar';
 import Notification from 'components/Notification/Notification';
+import LiftButton from 'components/Buttons/LiftButton/LiftButton';
 
 const App: FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: FC = () => {
         <Route path='/:id' element={<InProgress />} />
       </Routes>
       <AppFooter />
+      <LiftButton />
       <Notification />
     </>
   );

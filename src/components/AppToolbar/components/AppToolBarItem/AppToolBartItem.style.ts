@@ -10,4 +10,7 @@ export const AppToolServiceLink = styled(Link)`
   &:hover {
     background-color: #59443f;
   }
+  @media (max-width: 96.875rem) {
+    font-size: 130%;
+  }
 `;
