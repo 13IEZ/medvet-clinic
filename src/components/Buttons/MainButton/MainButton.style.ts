@@ -13,4 +13,9 @@ export const StyledMainButton = styled(Button)`
   &:hover {
     background: #59443f;
   }
+  @media (max-width: 64rem) {
+    font-size: 100%;
+    width: 10rem;
+    height: 3rem;
+  }
 `;

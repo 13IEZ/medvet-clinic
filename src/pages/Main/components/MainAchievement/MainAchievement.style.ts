@@ -6,16 +6,36 @@ export const StyledAchievementTitle = styled(Typography)`
   font-size: 9rem;
   color: #59443f;
   text-align: center;
+  @media (max-width: 96.875rem) {
+    font-size: 6rem;
+  }
+  @media (max-width: 64rem) {
+    font-size: 5rem;
+  }
 `;
 
 export const StyledAchievementSubTitle = styled(Typography)`
   font-family: 'Futura New Regular', serif;
   font-size: 5rem;
   color: #080606;
+  @media (max-width: 96.875rem) {
+    font-size: 4rem;
+  }
+  @media (max-width: 64rem) {
+    font-size: 3.5rem;
+  }
 `;
 
 export const StyledImg = styled.img`
   position: absolute;
-  right: 8%;
-  top: 79%;
+  right: -15%;
+  bottom: -10%;
+`;
+
+export const StyledAchievementSection = styled.section`
+  height: 80vh;
+  display: block;
+  @media (max-width: 48rem) {
+    display: none;
+  }
 `;

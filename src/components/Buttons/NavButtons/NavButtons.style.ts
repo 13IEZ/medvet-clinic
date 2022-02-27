@@ -10,4 +10,7 @@ export const StyledNavButton = styled(Button)`
     color: #59443f;
     background-color: inherit;
   }
+  @media (max-width: 96.875rem) {
+    font-size: 90%;
+  }
 `;

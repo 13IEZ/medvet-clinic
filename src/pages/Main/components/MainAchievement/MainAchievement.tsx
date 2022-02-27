@@ -4,6 +4,7 @@ import {
   StyledAchievementTitle,
   StyledAchievementSubTitle,
   StyledImg,
+  StyledAchievementSection,
 } from 'pages/Main/components/MainAchievement/MainAchievement.style';
 import { Grid, Skeleton } from '@mui/material';
 import { StyledContainer } from 'style/style';
@@ -13,10 +14,16 @@ const MainAchievement: FC = () => {
     mainAchievementApi.useFetchAchievementDataQuery('');
 
   return (
-    <section style={{ height: '80vh' }}>
-      <StyledContainer maxWidth={false} width='84.5rem'>
+    <StyledAchievementSection>
+      <StyledContainer maxWidth={false} width='84.5rem' sx={{ height: '100%' }}>
         {achievementData ? (
-          <Grid container direction='column' justifyContent='center' alignItems='center'>
+          <Grid
+            container
+            direction='column'
+            justifyContent='center'
+            alignItems='center'
+            sx={{ height: '100%', margin: '5rem 0' }}
+          >
             <Grid item sx={{ width: '56%', position: 'relative', padding: '4rem 0' }}>
               <StyledAchievementTitle>{achievementData.title}</StyledAchievementTitle>
               <StyledAchievementSubTitle>{achievementData.subtitle}</StyledAchievementSubTitle>
@@ -25,7 +32,7 @@ const MainAchievement: FC = () => {
           </Grid>
         ) : (
           <Grid container direction='column' justifyContent='center' alignItems='center'>
-            <Grid item sx={{ width: '56%', position: 'relative', padding: '4rem 0' }}>
+            <Grid item sx={{ width: '56%', position: 'relative' }}>
               <Skeleton variant='text' height={200} width='100%' />
               <Skeleton variant='text' height={100} width='100%' />
               <Skeleton variant='text' height={100} width='60%' />
@@ -33,7 +40,7 @@ const MainAchievement: FC = () => {
           </Grid>
         )}
       </StyledContainer>
-    </section>
+    </StyledAchievementSection>
   );
 };
 

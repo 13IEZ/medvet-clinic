@@ -19,7 +19,7 @@ const OurEmployees: FC = () => {
       <Box sx={{ margin: '1rem 0' }}>
         <MainEmployeesCarousel employeesCarouselData={employeesCarouselData} />
       </Box>
-      <Grid container justifyContent='center' sx={{ padding: '1rem 0 6rem' }}>
+      <Grid container justifyContent='center' sx={{ padding: '1rem 0 2rem' }}>
         <JumpButton title='Посмотреть всех' path='employees' />
       </Grid>
     </>

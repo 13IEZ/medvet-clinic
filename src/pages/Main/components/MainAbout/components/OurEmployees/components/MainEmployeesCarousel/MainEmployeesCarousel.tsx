@@ -12,7 +12,7 @@ interface IEmployeesCarouselData {
 
 const CustomLeftArrow: FC<ArrowProps> = ({ onClick }) => {
   return (
-    <div onClick={onClick} style={{ position: 'absolute', cursor: 'pointer' }}>
+    <div onClick={onClick} style={{ position: 'absolute', cursor: 'pointer', left: '-3%' }}>
       <img src={pref_arr} alt='previous arrow' />
     </div>
   );
@@ -20,7 +20,7 @@ const CustomLeftArrow: FC<ArrowProps> = ({ onClick }) => {
 
 const CustomRightArrow: FC<ArrowProps> = ({ onClick }) => {
   return (
-    <div onClick={onClick} style={{ position: 'absolute', right: 0, cursor: 'pointer' }}>
+    <div onClick={onClick} style={{ position: 'absolute', right: '-3%', cursor: 'pointer' }}>
       <img src={next_arr} alt='next arrow' />
     </div>
   );
@@ -31,17 +31,18 @@ const MainEmployeesCarousel: FC<IEmployeesCarouselData> = ({ employeesCarouselDa
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 4,
-      partialVisibilityGutter: 20,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 768 },
       items: 3,
-      partialVisibilityGutter: 15,
+    },
+    smallTablet: {
+      breakpoint: { max: 768, min: 481 },
+      items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 2,
-      partialVisibilityGutter: 10,
+      breakpoint: { max: 481, min: 0 },
+      items: 1,
     },
   };
 
@@ -50,11 +51,10 @@ const MainEmployeesCarousel: FC<IEmployeesCarouselData> = ({ employeesCarouselDa
       customRightArrow={<CustomRightArrow />}
       customLeftArrow={<CustomLeftArrow />}
       draggable={false}
-      partialVisible
       responsive={responsive}
       arrows
       infinite
-      slidesToSlide={2}
+      slidesToSlide={1}
     >
       {employeesCarouselData.map(elem => (
         <EmployeesCarouselChild key={elem.id} item={elem} />

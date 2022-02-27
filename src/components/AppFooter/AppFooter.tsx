@@ -6,6 +6,8 @@ import {
   StyledFooterTitle,
   StyledUrlLink,
   StyledFooterLink,
+  StyledFooterHolder,
+  StyledFooterBlockHolder,
 } from 'components/AppFooter/AppFooter.style';
 import { StyledContainer, StyledText } from 'style/style';
 import { Link } from 'react-router-dom';
@@ -18,16 +20,10 @@ const AppFooter: FC = () => {
   return (
     <StyledFooter>
       <StyledContainer maxWidth={false} width='91rem'>
-        <Grid
-          wrap='nowrap'
-          container
-          justifyContent='space-between'
-          alignItems='center'
-          sx={{ margin: '2rem 0', paddingTop: '2rem' }}
-        >
-          <Grid item>
+        <StyledFooterHolder container alignItems='center'>
+          <StyledFooterBlockHolder item>
             <Link to='/' style={{ textDecoration: 'none' }}>
-              <Grid container alignItems='center'>
+              <Grid container alignItems='center' justifyContent='center'>
                 <Box sx={{ marginRight: '1rem' }}>
                   <img
                     src={color_log}
@@ -43,9 +39,9 @@ const AppFooter: FC = () => {
                 </Box>
               </Grid>
             </Link>
-          </Grid>
+          </StyledFooterBlockHolder>
 
-          <Grid item xs={3}>
+          <Grid item sx={{ width: '40%' }}>
             <Grid container direction='column'>
               {footers ? (
                 footers.list.map(elem => (
@@ -96,7 +92,7 @@ const AppFooter: FC = () => {
               </StyledFooterLink>
             </Grid>
           </Grid>
-        </Grid>
+        </StyledFooterHolder>
       </StyledContainer>
     </StyledFooter>
   );

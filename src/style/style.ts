@@ -40,6 +40,7 @@ export const GlobalStyles = css`
   }
 
   body {
+    height: 100%;
     font-size: 100%;
     color: #59443f;
     background: #fffefe;
@@ -54,6 +55,9 @@ export const StyledSectionTitle = styled(Typography)`
   font-family: 'Schoolbook Cyrillic', serif;
   color: #080606;
   font-size: 2.5rem;
+  @media (max-width: 30rem) {
+    font-size: 2rem;
+  }
 `;
 
 export const StyledSubTitle = styled(Typography)<IStyledSubTitle>`
@@ -63,6 +67,12 @@ export const StyledSubTitle = styled(Typography)<IStyledSubTitle>`
   line-height: 2.5rem;
   margin: 0;
   padding: 0;
+  @media (max-width: 96.875rem) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 64rem) {
+    font-size: 1.3rem;
+  }
 `;
 
 export const StyledText = styled(Typography)<IStyledText>`
@@ -70,4 +80,10 @@ export const StyledText = styled(Typography)<IStyledText>`
   color: ${(props): string => props.color};
   font-size: 1.25rem;
   line-height: 1.875rem;
+  @media (max-width: 96.875rem) {
+    font-size: 1rem;
+  }
+  @media (max-width: 48rem) {
+    font-size: 0.9rem;
+  }
 `;

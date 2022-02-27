@@ -15,8 +15,10 @@ const MainServices: FC = () => {
           container
           justifyContent='space-between'
           alignItems='center'
-          columns={{ xs: 4, sm: 9, md: 12 }}
-          sx={{ margin: '6rem 0' }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+          sx={{ margin: '5rem 0' }}
+          columnSpacing={1}
+          rowSpacing={3}
         >
           {listOfService
             ? listOfService.map(elem => <MainServicesItem key={elem.id} item={elem} />)
