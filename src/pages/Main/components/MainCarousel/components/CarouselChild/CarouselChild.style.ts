@@ -51,6 +51,9 @@ export const StyleCarouselImg = styled.img`
   @media (max-width: 28.125rem) {
     height: 15rem;
   }
+  @media (max-width: 23.75rem) {
+    height: 13rem;
+  }
 `;
 
 export const StyledContentHolder = styled(Grid)`

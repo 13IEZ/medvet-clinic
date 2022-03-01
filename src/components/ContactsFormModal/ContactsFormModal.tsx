@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Modal, Grid, IconButton } from '@mui/material';
-import { StyledModalBody } from 'components/ContactsForm/ContactsForm.style';
+import { StyledModalBody } from 'components/ContactsFormModal/ContactsFormModal.style';
 import close_ic from 'assets/images/close-ic.png';
 import { StyledSubTitle } from 'style/style';
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import ContactsFormBody from 'components/ContactsForm/components/ContactsFormBody/ContactsFormBody';
+import ContactsFormModalBody from 'components/ContactsFormModal/components/ContactsFormModalBody/ContactsFormModalBody';
 import { notificationSlice } from 'store/reducers/NotificationSlice';
 import axios from 'axios';
 import { useAppDispatch } from 'hooks/hooks';
@@ -31,26 +31,29 @@ const schema = yup
       .required('Поле является обязательным'),
     tel: yup
       .string()
-      .min(12, 'Не правильно указан телефонный номер (не хватает цифр)')
-      .max(12, 'Введено больше символов чем необходимо')
+      .min(10, 'Не правильно указан телефонный номер (не хватает цифр)')
+      .max(10, 'Введено больше символов чем необходимо')
       .required('Поле является обязательным'),
     comment: yup.string().max(120, 'Комментарий не должен превышать 120 символов'),
   })
   .required();
 
-const ContactsForm: FC<IContactsForm> = ({ open, handleAction }) => {
+const ContactsFormModal: FC<IContactsForm> = ({ open, handleAction }) => {
   const methods = useForm<IContactsFormInputs>({
     resolver: yupResolver(schema),
-    defaultValues: { name: '', tel: '+7', comment: '' },
+    defaultValues: { name: '', tel: '', comment: '' },
   });
   const { genNotification } = notificationSlice.actions;
   const dispatch = useAppDispatch();
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = methods.handleSubmit(async data => {
+    setIsLoading(true);
     try {
       const response = await axios.post(
         `https://api.telegram.org/bot${process.env['REACT_APP_TELEGRAM_TOKEN']}/sendMessage?chat_id=${process.env['REACT_APP_TELEGRAM_GROUP_ID']}&text=Name:+${data.name}+Tel:+${data.tel}+Comm:+${data.comment}`
       );
+      setIsLoading(false);
       if (response.status === 200) {
         methods.reset();
         handleAction();
@@ -62,6 +65,7 @@ const ContactsForm: FC<IContactsForm> = ({ open, handleAction }) => {
         );
       }
     } catch (e) {
+      setIsLoading(false);
       dispatch(
         genNotification({
           message:
@@ -94,9 +98,9 @@ const ContactsForm: FC<IContactsForm> = ({ open, handleAction }) => {
               </IconButton>
             </Grid>
             <StyledSubTitle sx={{ textAlign: 'center' }}>Запись на прием</StyledSubTitle>
-            <ContactsFormBody />
+            <ContactsFormModalBody />
             <Grid container justifyContent='center' sx={{ margin: '2rem 0' }}>
-              <MainButton action={onSubmit} title='ОТПРАВИТЬ' />
+              <MainButton action={onSubmit} title='ОТПРАВИТЬ' isLoading={isLoading} />
             </Grid>
           </StyledModalBody>
         </Modal>
@@ -105,4 +109,4 @@ const ContactsForm: FC<IContactsForm> = ({ open, handleAction }) => {
   );
 };
 
-export default ContactsForm;
+export default ContactsFormModal;

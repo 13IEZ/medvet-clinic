@@ -10,6 +10,7 @@ export const StyledMainButton = styled(Button)`
   box-shadow: 0 4px 20px #ffc59e;
   width: 17.8rem;
   height: 4.2rem;
+  z-index: 999;
   &:hover {
     background: #59443f;
   }
