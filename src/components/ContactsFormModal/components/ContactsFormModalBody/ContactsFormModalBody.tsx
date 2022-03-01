@@ -1,19 +1,19 @@
 import React, { ChangeEventHandler, FC, useState } from 'react';
-import { Grid } from '@mui/material';
-import { StyledInput } from 'components/ContactsForm/ContactsForm.style';
+import { Grid, InputAdornment } from '@mui/material';
+import { StyledInput } from 'components/ContactsFormModal/ContactsFormModal.style';
 import { useFormContext } from 'react-hook-form';
 
-const ContactsFormBody: FC = () => {
+const ContactsFormModalBody: FC = () => {
   const {
     register,
     formState: { errors },
     getValues,
     setValue,
   } = useFormContext();
-  const [telState, setTelState] = useState('+7');
+  const [telState, setTelState] = useState('');
 
   const onChangeTel: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = e => {
-    if (e.target.value.length <= 12 && e.target.value.length >= 2 && +e.target.value) {
+    if (e.target.value.length <= 10 && (+e.target.value || ' ') && e.target.value !== ' ') {
       setValue('tel', e.target.value);
       setTelState(getValues('tel'));
     } else {
@@ -41,7 +41,7 @@ const ContactsFormBody: FC = () => {
         inputProps={{ maxLength: 45 }}
       />
       <StyledInput
-        {...register('tel', { maxLength: 11 })}
+        {...register('tel', { maxLength: 10 })}
         label='Номер телефона*'
         variant='outlined'
         type='string'
@@ -51,6 +51,9 @@ const ContactsFormBody: FC = () => {
         onChange={onChangeTel}
         error={!!errors?.['tel']}
         helperText={errors?.['tel']?.message}
+        InputProps={{
+          startAdornment: <InputAdornment position='start'>+7</InputAdornment>,
+        }}
       />
       <StyledInput
         {...register('comment')}
@@ -69,4 +72,4 @@ const ContactsFormBody: FC = () => {
   );
 };
 
-export default ContactsFormBody;
+export default ContactsFormModalBody;

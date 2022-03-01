@@ -4,7 +4,7 @@ import MainServices from 'pages/Main/components/MainServices/MainServices';
 import MainAbout from 'pages/Main/components/MainAbout/MainAbout';
 import MainAchievement from 'pages/Main/components/MainAchievement/MainAchievement';
 import MainAdvantages from 'pages/Main/components/MainAdvantages/MainAdvantages';
-import MainContacts from 'pages/Main/components/MainContacts/MainContacts';
+import ContactsSection from 'components/ContactsSection/ContactsSection';
 
 const Main: FC = () => {
   return (
@@ -14,7 +14,7 @@ const Main: FC = () => {
       <MainAbout />
       <MainAchievement />
       <MainAdvantages />
-      <MainContacts />
+      <ContactsSection />
     </>
   );
 };

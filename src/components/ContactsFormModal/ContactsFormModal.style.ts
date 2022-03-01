@@ -22,7 +22,6 @@ export const StyledInput = styled(TextField)`
     border-radius: 1.25rem;
   }
   input {
-    border: 1px solid #ede9e8;
     border-radius: 1.25rem;
   }
 `;

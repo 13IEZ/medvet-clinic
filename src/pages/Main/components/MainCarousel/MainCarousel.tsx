@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import { StyledCarousel } from 'pages/Main/components/MainCarousel/MainCarousel.style';
 import CarouselChild from 'pages/Main/components/MainCarousel/components/CarouselChild/CarouselChild';
 import { Skeleton, Grid } from '@mui/material';
-import ContactsForm from 'components/ContactsForm/ContactsForm';
+import ContactsFormModal from 'components/ContactsFormModal/ContactsFormModal';
 
 const MainCarousel: FC = () => {
   const { data: carouselData, error: fetchError } = mainCarouselApi.useFetchCarouselDataQuery('');
@@ -36,7 +36,7 @@ const MainCarousel: FC = () => {
           <CarouselChild key={elem.id} item={elem} handleModalAction={handleModalAction} />
         ))}
       </StyledCarousel>
-      <ContactsForm open={isOpen} handleAction={handleModalAction} />
+      <ContactsFormModal open={isOpen} handleAction={handleModalAction} />
     </main>
   ) : (
     <Grid container direction='row' wrap='nowrap' justifyContent='center' alignItems='center'>

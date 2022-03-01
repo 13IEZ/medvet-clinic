@@ -6,7 +6,7 @@ import location from 'assets/images/location-ic.png';
 import phone from 'assets/images/phone-ic.png';
 import clock from 'assets/images/clock-ic.png';
 
-const MainContactsInfo: FC = () => {
+const ContactsSectionInfo: FC = () => {
   const { data: contactsData, error: fetchError } = mainContactsApi.useFetchContactsDataQuery('');
 
   return (
@@ -81,4 +81,4 @@ const MainContactsInfo: FC = () => {
   );
 };
 
-export default MainContactsInfo;
+export default ContactsSectionInfo;
