@@ -25,7 +25,7 @@ const CarouselChild: FC<CarouselChild> = ({ item, handleModalAction }) => {
       alignItems='flex-end'
       wrap='nowrap'
     >
-      <Grid item xs={3} sx={{ height: '100%' }}>
+      <Grid item xs={3} sx={{ height: '100%', padding: '2rem 0' }}>
         <Grid container direction='column' justifyContent='space-between' sx={{ height: '100%' }}>
           <MainTitle>{item.title}</MainTitle>
           <MainButton action={handleModalAction} title='ЗАПИСАТЬСЯ' />

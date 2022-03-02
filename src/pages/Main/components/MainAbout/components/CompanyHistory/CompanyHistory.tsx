@@ -5,8 +5,9 @@ import {
   StyledHistoryText,
   HistoryDiv,
 } from 'pages/Main/components/MainAbout/components/CompanyHistory/CompanyHistory.style';
-import { Skeleton, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import JumpButton from 'components/Buttons/JumpButton/JumpButton';
+import SkeletonCompanyHistory from 'pages/Main/components/MainAbout/components/CompanyHistory/components/SkeletonCompanyHistory/SkeletonCompanyHistory';
 
 const CompanyHistory: FC = () => {
   const { data: historyData, error: fetchError } = mainHistoryApi.useFetchHistoryDataQuery('');
@@ -24,11 +25,7 @@ const CompanyHistory: FC = () => {
       </Grid>
     </>
   ) : (
-    <HistoryDiv>
-      <Skeleton variant='text' width='40%' height={60} sx={{ margin: '0 auto' }} />
-      <Skeleton variant='text' width='50%' height={160} sx={{ margin: '0 auto' }} />
-      <Skeleton variant='text' width='10%' height={40} sx={{ margin: '0 auto' }} />
-    </HistoryDiv>
+    <SkeletonCompanyHistory />
   );
 };
 

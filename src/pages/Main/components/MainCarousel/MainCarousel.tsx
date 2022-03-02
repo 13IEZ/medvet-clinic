@@ -4,8 +4,8 @@ import CustomDots from 'pages/Main/components/MainCarousel/components/CustomDots
 import 'react-multi-carousel/lib/styles.css';
 import { StyledCarousel } from 'pages/Main/components/MainCarousel/MainCarousel.style';
 import CarouselChild from 'pages/Main/components/MainCarousel/components/CarouselChild/CarouselChild';
-import { Skeleton, Grid } from '@mui/material';
 import ContactsFormModal from 'components/ContactsFormModal/ContactsFormModal';
+import SkeletonMainCarousel from 'pages/Main/components/MainCarousel/components/SkeletonMainCarousel/SkeletonMainCarousel';
 
 const MainCarousel: FC = () => {
   const { data: carouselData, error: fetchError } = mainCarouselApi.useFetchCarouselDataQuery('');
@@ -39,22 +39,7 @@ const MainCarousel: FC = () => {
       <ContactsFormModal open={isOpen} handleAction={handleModalAction} />
     </main>
   ) : (
-    <Grid container direction='row' wrap='nowrap' justifyContent='center' alignItems='center'>
-      <Grid item xs={2}>
-        <Grid container direction='column' alignItems='center' gap={5}>
-          <Skeleton variant='circular' height='4rem' width='4rem' />
-          <Skeleton variant='circular' height='4rem' width='4rem' />
-          <Skeleton variant='circular' height='4rem' width='4rem' />
-          <Skeleton variant='circular' height='4rem' width='4rem' />
-          <Skeleton variant='circular' height='4rem' width='4rem' />
-        </Grid>
-      </Grid>
-      <Grid item xs={10} sx={{ height: '100%' }}>
-        <Grid container justifyContent='center' alignItems='center' sx={{ height: '100%' }}>
-          <Skeleton variant='rectangular' width='95%' height='80%' sx={{ borderRadius: '3rem' }} />
-        </Grid>
-      </Grid>
-    </Grid>
+    <SkeletonMainCarousel />
   );
 };
 

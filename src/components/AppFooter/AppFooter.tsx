@@ -51,9 +51,9 @@ const AppFooter: FC = () => {
                 ))
               ) : (
                 <Grid item>
-                  <Skeleton variant='text' width={210} height={50} sx={{ bgcolor: '#fff' }} />
-                  <Skeleton variant='text' width={200} height={50} sx={{ bgcolor: '#fff' }} />
-                  <Skeleton variant='text' width={150} height={50} sx={{ bgcolor: '#fff' }} />
+                  <Skeleton variant='text' width={'80%'} height={50} sx={{ bgcolor: '#fff' }} />
+                  <Skeleton variant='text' width={'65%'} height={50} sx={{ bgcolor: '#fff' }} />
+                  <Skeleton variant='text' width={'40%'} height={50} sx={{ bgcolor: '#fff' }} />
                 </Grid>
               )}
             </Grid>
@@ -68,10 +68,10 @@ const AppFooter: FC = () => {
                   </StyledUrlLink>
                 ))
               ) : (
-                <Grid>
-                  <Skeleton variant='text' width={200} height={50} sx={{ bgcolor: '#fff' }} />
-                  <Skeleton variant='text' width={220} height={50} sx={{ bgcolor: '#fff' }} />
-                  <Skeleton variant='text' width={170} height={50} sx={{ bgcolor: '#fff' }} />
+                <Grid item sx={{ width: '100%' }}>
+                  <Skeleton variant='text' width={150} height={50} sx={{ bgcolor: '#fff' }} />
+                  <Skeleton variant='text' width={'50%'} height={50} sx={{ bgcolor: '#fff' }} />
+                  <Skeleton variant='text' width={'80%'} height={50} sx={{ bgcolor: '#fff' }} />
                 </Grid>
               )}
             </Grid>

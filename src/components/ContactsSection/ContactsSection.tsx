@@ -8,7 +8,7 @@ const ContactsSection: FC = () => {
   return (
     <section>
       <StyledContainer maxWidth={false} width='91.25rem' sx={{ marginBottom: '10rem' }}>
-        <StyledSectionTitle sx={{ margin: '10rem 0 5rem', textAlign: 'center' }}>
+        <StyledSectionTitle sx={{ margin: '5rem 0 5rem', textAlign: 'center' }}>
           Контакты
         </StyledSectionTitle>
 
