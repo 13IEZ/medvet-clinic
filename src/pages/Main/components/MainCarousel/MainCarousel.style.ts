@@ -10,6 +10,7 @@ export const StyledCarousel = styled(Carousel)`
   }
 
   @media (max-width: 48rem) {
+    margin: 0;
     padding: 5rem 0;
     position: relative;
   }

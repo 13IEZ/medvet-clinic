@@ -30,14 +30,14 @@ const ContactsSectionInfo: FC = () => {
                   <StyledText color='#59443F'>{contactsData.address}</StyledText>
                 </Link>
               ) : (
-                <Skeleton variant='text' height={50} width={'100%'} />
+                <Skeleton variant='text' height={50} width={'5rem'} />
               )}
             </Grid>
           </Grid>
         </Box>
 
         <Box sx={{ margin: '2rem 0' }}>
-          <Grid container alignItems='center'>
+          <Grid container alignItems='center' wrap='nowrap'>
             <Grid item sx={{ marginRight: '2rem' }}>
               <img src={phone} alt='phone icon' />
             </Grid>
@@ -56,14 +56,14 @@ const ContactsSectionInfo: FC = () => {
                   </Link>
                 ))
               ) : (
-                <Skeleton variant='text' height={50} width={'100%'} />
+                <Skeleton variant='text' height={50} width={'5rem'} />
               )}
             </Grid>
           </Grid>
         </Box>
 
         <Box>
-          <Grid container alignItems='center'>
+          <Grid container alignItems='center' wrap='nowrap'>
             <Grid item sx={{ marginRight: '2rem' }}>
               <img src={clock} alt='phone icon' />
             </Grid>
@@ -71,7 +71,7 @@ const ContactsSectionInfo: FC = () => {
               {contactsData ? (
                 <StyledText color='#59443F'>{contactsData.timeWork}</StyledText>
               ) : (
-                <Skeleton variant='text' height={50} width={'100%'} />
+                <Skeleton variant='text' height={50} width={'5rem'} />
               )}
             </Grid>
           </Grid>

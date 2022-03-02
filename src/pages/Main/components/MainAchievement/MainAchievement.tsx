@@ -6,8 +6,9 @@ import {
   StyledImg,
   StyledAchievementSection,
 } from 'pages/Main/components/MainAchievement/MainAchievement.style';
-import { Grid, Skeleton } from '@mui/material';
+import { Grid } from '@mui/material';
 import { StyledContainer } from 'style/style';
+import SkeletonMainAchievement from 'pages/Main/components/MainAchievement/components/SkeletonMainAchievement/SkeletonMainAchievement';
 
 const MainAchievement: FC = () => {
   const { data: achievementData, error: fetchError } =
@@ -31,13 +32,7 @@ const MainAchievement: FC = () => {
             </Grid>
           </Grid>
         ) : (
-          <Grid container direction='column' justifyContent='center' alignItems='center'>
-            <Grid item sx={{ width: '56%', position: 'relative' }}>
-              <Skeleton variant='text' height={200} width='100%' />
-              <Skeleton variant='text' height={100} width='100%' />
-              <Skeleton variant='text' height={100} width='60%' />
-            </Grid>
-          </Grid>
+          <SkeletonMainAchievement />
         )}
       </StyledContainer>
     </StyledAchievementSection>
