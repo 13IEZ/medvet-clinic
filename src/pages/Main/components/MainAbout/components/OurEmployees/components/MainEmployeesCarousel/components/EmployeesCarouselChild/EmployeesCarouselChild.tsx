@@ -16,8 +16,8 @@ const EmployeesCarouselChild: FC<IEmployeesCarouselChild> = ({ item }) => {
       <CardActionArea sx={{ height: '100%' }}>
         <CardMedia component='img' image={item.photo} alt='photo' height='60%' />
         <CardContent sx={{ height: '100%' }}>
-          <StyledEmployeesCarouselTitle variant='h3'>{item.position}</StyledEmployeesCarouselTitle>
-          <StyledEmployeesCarouselText paragraph>{item.fullName}</StyledEmployeesCarouselText>
+          <StyledEmployeesCarouselTitle variant='h3'>{item.fullName}</StyledEmployeesCarouselTitle>
+          <StyledEmployeesCarouselText paragraph>{item.position}</StyledEmployeesCarouselText>
         </CardContent>
       </CardActionArea>
     </Card>
