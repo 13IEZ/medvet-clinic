@@ -12,6 +12,9 @@ export const StyledAchievementTitle = styled(Typography)`
   @media (max-width: 64rem) {
     font-size: 5rem;
   }
+  @media (max-width: 48rem) {
+    font-size: 3.5rem;
+  }
 `;
 
 export const StyledAchievementSubTitle = styled(Typography)`
@@ -24,18 +27,20 @@ export const StyledAchievementSubTitle = styled(Typography)`
   @media (max-width: 64rem) {
     font-size: 3.5rem;
   }
-`;
-
-export const StyledImg = styled.img`
-  position: absolute;
-  right: -15%;
-  bottom: -10%;
+  @media (max-width: 48rem) {
+    font-size: 2.5rem;
+    text-align: center;
+  }
 `;
 
 export const StyledAchievementSection = styled.section`
   height: 80vh;
   display: block;
+`;
+
+export const StyledImg = styled.img`
+  height: auto;
   @media (max-width: 48rem) {
-    display: none;
+    height: 12rem;
   }
 `;
