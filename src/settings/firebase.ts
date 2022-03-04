@@ -15,6 +15,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-// logEvent(analytics, 'notification_received');
+logEvent(analytics, 'notification_received');
 export const fireStore = getFirestore(app);
 export const storage = getStorage(app);
