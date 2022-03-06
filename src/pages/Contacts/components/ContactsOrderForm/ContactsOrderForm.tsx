@@ -92,7 +92,7 @@ const ContactsOrderForm: FC = () => {
           <Grid item xs={12}>
             <FormProvider {...methods}>
               <form>
-                <StyledSectionTitle sx={{ textAlign: 'center' }}>
+                <StyledSectionTitle variant='h1' sx={{ textAlign: 'center' }}>
                   Запись на прием
                 </StyledSectionTitle>
                 <ContactsOrderFormBody telState={telState} setTelState={setTelState} />

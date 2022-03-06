@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { mainHistoryApi } from 'store/services/Main/MainHistoryService/MainHistoryService';
 import { StyledSectionTitle } from 'style/style';
 import {
-  StyledHistoryText,
+  StyledHistoryDescription,
   HistoryDiv,
 } from 'pages/Main/components/MainAbout/components/CompanyHistory/CompanyHistory.style';
 import { Grid } from '@mui/material';
@@ -19,7 +19,7 @@ const CompanyHistory: FC = () => {
           {historyData.title}
         </StyledSectionTitle>
       </HistoryDiv>
-      <StyledHistoryText paragraph>{historyData.text}</StyledHistoryText>
+      <StyledHistoryDescription>{historyData.text}</StyledHistoryDescription>
       <Grid container justifyContent='center'>
         <JumpButton title='Читать далее' path='about' />
       </Grid>

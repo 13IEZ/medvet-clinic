@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import { Grid } from '@mui/material';
-import { StyledSubTitle } from 'style/style';
+import { StyledH1ResponsiveTitle } from 'style/style';
 import JumpButton from 'components/Buttons/JumpButton/JumpButton';
 import work_ic from 'assets/images/work-ic.png';
 
 const InProgress: FC = () => {
   return (
-    <section style={{ height: '100vh' }}>
+    <section style={{ height: '85vh' }}>
       <Grid
         container
         direction='column'
@@ -16,9 +16,7 @@ const InProgress: FC = () => {
         sx={{ height: '100%' }}
       >
         <img src={work_ic} alt='In progress icon' />
-        <StyledSubTitle sx={{ width: '90%', textAlign: 'center' }}>
-          Страница находится в разработке ...
-        </StyledSubTitle>
+        <StyledH1ResponsiveTitle>Страница находится в разработке ...</StyledH1ResponsiveTitle>
         <JumpButton title='Вернуться на главную' path='/' />
       </Grid>
     </section>
