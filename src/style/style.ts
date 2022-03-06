@@ -87,3 +87,15 @@ export const StyledText = styled(Typography)<IStyledText>`
     font-size: 0.9rem;
   }
 `;
+
+export const StyledH1ResponsiveTitle = styled.h1`
+  font-family: 'Schoolbook Cyrillic', serif;
+  font-size: 3rem;
+  color: #080606;
+  margin: 0;
+  text-align: center;
+  width: 90%;
+  @media (max-width: 32.5rem) {
+    font-size: 1.6rem;
+  }
+`;

@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { Typography } from '@mui/material';
 
-export const StyledHistoryText = styled(Typography)`
+export const StyledHistoryDescription = styled(Typography)`
   font-family: 'Futura New Regular', serif;
+  font-weight: normal;
   font-size: 1.25rem;
   color: #59443f;
   line-height: 1.875rem;
