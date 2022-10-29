@@ -4,12 +4,15 @@ import { ToolbarMobileLocationItemHolder } from 'components/AppToolbar/component
 import location from 'assets/images/location-ic.png';
 import { StyledListItemText } from 'components/AppToolbar/components/AppToolBarMobile/components/AppToolbarMobileItem/AppToolbarMobileItem.style';
 import { StyledNavLink } from 'components/AppToolbar/AppToolbar.style';
+import { StyledText } from 'style/style';
 
 const AppToolbarMobileLocationItem = () => {
   return (
     <ToolbarMobileLocationItemHolder>
       <Divider />
-      <ListSubheader>Расположение</ListSubheader>
+      <ListSubheader>
+        <StyledText color='#080606'>Расположение</StyledText>
+      </ListSubheader>
       <StyledNavLink
         target='_blank'
         rel='noopener'

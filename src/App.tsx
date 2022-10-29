@@ -10,6 +10,8 @@ import AppToolbar from 'components/AppToolbar/AppToolbar';
 import Notification from 'components/Notification/Notification';
 import LiftButton from 'components/Buttons/LiftButton/LiftButton';
 import Contacts from 'pages/Contacts/Contacts';
+import Employees from 'pages/Employees/Employees';
+import Employee from 'pages/Employee/Employee';
 import NotFound from 'pages/NotFound/NotFound';
 
 const App: FC = () => {
@@ -20,8 +22,11 @@ const App: FC = () => {
       <AppToolbar />
       <Routes>
         <Route path='/' element={<Main />} />
+        <Route path='employees'>
+          <Route index element={<Employees />} />
+          <Route path=':id' element={<Employee />} />
+        </Route>
         <Route path='blog' element={<InProgress />} />
-        <Route path='employees' element={<InProgress />} />
         <Route path='about' element={<InProgress />} />
         <Route path='news-promotions' element={<InProgress />} />
         <Route path='contacts' element={<Contacts />} />

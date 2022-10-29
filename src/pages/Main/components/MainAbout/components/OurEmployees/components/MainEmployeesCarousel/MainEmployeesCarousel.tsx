@@ -10,7 +10,7 @@ interface IEmployeesCarouselData {
   employeesCarouselData: IEmployeesCarousel[] | undefined;
 }
 
-const CustomLeftArrow: FC<ArrowProps> = ({ onClick }) => {
+export const CustomLeftArrow: FC<ArrowProps> = ({ onClick }) => {
   return (
     <div onClick={onClick} style={{ position: 'absolute', cursor: 'pointer', left: '-3%' }}>
       <img src={pref_arr} alt='previous arrow' />
@@ -18,7 +18,7 @@ const CustomLeftArrow: FC<ArrowProps> = ({ onClick }) => {
   );
 };
 
-const CustomRightArrow: FC<ArrowProps> = ({ onClick }) => {
+export const CustomRightArrow: FC<ArrowProps> = ({ onClick }) => {
   return (
     <div onClick={onClick} style={{ position: 'absolute', right: '-3%', cursor: 'pointer' }}>
       <img src={next_arr} alt='next arrow' />
