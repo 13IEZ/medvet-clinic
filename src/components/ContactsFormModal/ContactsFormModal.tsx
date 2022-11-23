@@ -89,6 +89,7 @@ const ContactsFormModal: FC<IContactsForm> = ({ open, handleAction }) => {
           <StyledModalBody>
             <Grid container justifyContent='flex-end' direction='row' alignItems='center'>
               <IconButton
+                sx={{ margin: '0.2rem' }}
                 onClick={() => {
                   handleAction();
                   methods.clearErrors();

@@ -1,6 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Box, Fab, useScrollTrigger, Zoom } from '@mui/material';
 import icon from 'assets/images/chevron-up.png';
+import { useLocation } from 'react-router';
 
 interface Props {
   window?: () => Window;
@@ -43,6 +44,18 @@ function ScrollTop(props: Props) {
 }
 
 const LiftButton: FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const anchor = document.querySelector('#back-to-top-anchor');
+
+    if (anchor) {
+      anchor.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    }
+  }, [location.pathname]);
   return (
     <ScrollTop>
       <Fab color='default' aria-label='scroll back to top' size='small'>

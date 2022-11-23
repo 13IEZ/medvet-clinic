@@ -5,6 +5,7 @@ import close_icon from 'assets/images/close-ic.png';
 import { headerApi } from 'store/services/HeaderService/HeaderService';
 import AppToolbarMobileItem from 'components/AppToolbar/components/AppToolBarMobile/components/AppToolbarMobileItem/AppToolbarMobileItem';
 import AppToolbarMobileLocationItem from 'components/AppToolbar/components/AppToolBarMobile/components/AppToolbarMobileLocationItem/AppToolbarMobileLocationItem';
+import { StyledText } from 'style/style';
 
 const AppToolBarMobile: FC = () => {
   const { data: headers, error: fetchError } = headerApi.useFetchHeadersQuery('');
@@ -17,7 +18,9 @@ const AppToolBarMobile: FC = () => {
       </IconButton>
       <Drawer anchor='right' open={isOpenMenu} onClose={() => setIsOpenMenu(!isOpenMenu)}>
         <List component='nav' sx={{ width: '100%' }}>
-          <ListSubheader>Навигация</ListSubheader>
+          <ListSubheader>
+            <StyledText color='#080606'>Навигация</StyledText>
+          </ListSubheader>
           {headers &&
             headers.map(elem => (
               <AppToolbarMobileItem item={elem} key={elem.key} setIsOpenMenu={setIsOpenMenu} />

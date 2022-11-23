@@ -16,6 +16,7 @@ import { mainAchievementApi } from 'store/services/Main/MainAchievementService/M
 import { mainAdvantagesApi } from 'store/services/Main/MainAdvantagesService/MainAdvantagesService';
 import { mainContactsApi } from 'store/services/Main/MainContactsService/MainContactsService';
 import { footerApi } from 'store/services/FooterService/FooterService';
+import { employeeApi } from 'store/services/Employee/EmployeeService';
 import notificationReducer from 'store/reducers/NotificationSlice';
 
 const rootReducer = combineReducers({
@@ -29,6 +30,7 @@ const rootReducer = combineReducers({
   [mainAdvantagesApi.reducerPath]: mainAdvantagesApi.reducer,
   [mainContactsApi.reducerPath]: mainContactsApi.reducer,
   [footerApi.reducerPath]: footerApi.reducer,
+  [employeeApi.reducerPath]: employeeApi.reducer,
 });
 
 export const setupStore: () => EnhancedStore<
@@ -48,7 +50,8 @@ export const setupStore: () => EnhancedStore<
         mainAchievementApi.middleware,
         mainAdvantagesApi.middleware,
         mainContactsApi.middleware,
-        footerApi.middleware
+        footerApi.middleware,
+        employeeApi.middleware
       ),
   });
 };
