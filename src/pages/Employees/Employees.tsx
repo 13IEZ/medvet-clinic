@@ -43,10 +43,13 @@ const Employees = () => {
           О нас
         </StyledSubTitle>
         <StyledText color='#59443F' marginBottom={!isWider480 ? 2 : 5}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus cupiditate deleniti
-          dignissimos hic, id molestias numquam quibusdam. A adipisci deleniti ducimus earum iste
-          nobis nulla quae quibusdam tempora voluptatum. Iure, nemo ratione! Aliquid dolorum maiores
-          numquam perferendis perspiciatis, totam voluptatibus.
+          В основе нашей клиники лежит простой фундамент - приверженность принципам доказательной
+          медицины. Мы внимательны к животным и людям и искренне хотим помочь. Мы считаем, что
+          лечение должно проходить без лишнего стресса и создаем условия для того, чтобы всем было
+          комфортно. Мы принимаем взвешенные решения, учитывая потребности наших пациентов. Мы
+          готовы к сложным ситуациям и нестандартным медицинским случаям. Мы отвечаем за каждую
+          процедуру и рекомендацию. Наши сотрудники досконально знают свое дело, увлечены профессией
+          и постоянно совершенствуются в ней.
         </StyledText>
         <StyledSubTitle ref={refSpecialists} primary='primary'>
           Специалисты

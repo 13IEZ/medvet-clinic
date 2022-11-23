@@ -1,5 +1,6 @@
 interface IFooterList {
   title: string;
+  url: string;
 }
 
 interface IFooterLinksList {

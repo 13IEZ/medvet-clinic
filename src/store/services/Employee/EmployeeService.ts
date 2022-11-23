@@ -13,7 +13,6 @@ export const employeeApi = createApi({
         const db = getFirestore();
         const docRef = doc(db, 'mainEmployes', id);
         const docSnap = await getDoc(docRef);
-        console.log(docSnap.data());
         if (docSnap.data()) return { data: docSnap.data() as IEmployeesCarousel };
         else
           return {

@@ -10,6 +10,7 @@ import {
   StyledFooterBlockHolder,
 } from 'components/AppFooter/AppFooter.style';
 import { StyledContainer, StyledText } from 'style/style';
+
 import { Link } from 'react-router-dom';
 import { footerApi } from 'store/services/FooterService/FooterService';
 import SocialBar from 'components/SocialBar/SocialBar';
@@ -45,7 +46,7 @@ const AppFooter: FC = () => {
             <Grid container direction='column'>
               {footers ? (
                 footers.list.map(elem => (
-                  <StyledFooterLink key={elem.title}>
+                  <StyledFooterLink key={elem.title} href={elem?.url} target='_blank'>
                     <StyledText color='#fff'>{elem.title}</StyledText>
                   </StyledFooterLink>
                 ))

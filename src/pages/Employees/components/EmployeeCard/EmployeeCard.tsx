@@ -17,7 +17,7 @@ const EmployeeCard: React.FC<IEmployeesCarousel> = ({
   const isWider420 = useMediaQuery('(min-width:420px)');
 
   return (
-    <Grid item lg={6} md={12}>
+    <Grid item lg={6} md={12} xs={12}>
       <Link to={`${id}`} style={{ textDecoration: 'none' }}>
         <StyledEmployeesCard>
           <CardActionArea sx={{ padding: '1rem', minHeight: '15.5rem' }}>
@@ -36,8 +36,9 @@ const EmployeeCard: React.FC<IEmployeesCarousel> = ({
                   {getTextExperience(experience)}
                 </StyledText>
               </Grid>
+              {/*<Grid item container xs={!isWider420 ? 12 : 8} gap={1}>*/}
               <Grid item container xs={!isWider420 ? 12 : 8} gap={1}>
-                <Grid>
+                <Grid item xs={12}>
                   <StyledText style={{ fontSize: '1rem' }} color='#C3B9B5'>
                     {position}
                   </StyledText>
@@ -45,7 +46,7 @@ const EmployeeCard: React.FC<IEmployeesCarousel> = ({
                     {fullName}
                   </StyledText>
                 </Grid>
-                <Grid>
+                <Grid item>
                   <StyledText style={{ fontSize: '1rem' }} color='#C3B9B5'>
                     Cпециализация
                   </StyledText>
