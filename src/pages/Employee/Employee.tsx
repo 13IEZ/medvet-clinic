@@ -19,7 +19,11 @@ const Employee = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isWider480 = useMediaQuery('(max-width:480px)');
   const handleModalAction = (): void => setIsOpen(!isOpen);
-  const { data: employeeData, error: fetchError } = employeeApi.useFetchEmployeeQuery(id);
+  const {
+    data: employeeData,
+    error: fetchError,
+    isFetching,
+  } = employeeApi.useFetchEmployeeQuery(id);
   const { data: employeesCarouselData, error: carouselError } =
     employeesCarouselApi.useFetchEmployeesCarouselQuery('');
 
@@ -28,7 +32,7 @@ const Employee = () => {
   }, [params]);
 
   const getLeftBlockComponent = () => {
-    return employeeData ? (
+    return employeeData && !isFetching ? (
       <Grid container flexDirection='column' alignItems='center' marginBottom={isWider480 ? 3 : 0}>
         <StyledAvatar alt='avatar' src={employeeData.photo} />
         <MainButton title='Записаться' action={handleModalAction} />
@@ -44,7 +48,7 @@ const Employee = () => {
   };
 
   const getRightBlockComponent = () => {
-    return employeeData ? (
+    return employeeData && !isFetching ? (
       <>
         <Grid container flexDirection='column' spacing={5}>
           <Grid item>
@@ -54,11 +58,8 @@ const Employee = () => {
             <StyledSubTitle primary='primary'>{employeeData.fullName}</StyledSubTitle>
             <StyledText color='#C3B9B5'>{getTextExperience(employeeData.experience)}</StyledText>
           </Grid>
-          <Grid item>
+          <Grid item marginBottom={2}>
             <StyledText color='#59443F'>{employeeData.specialization}</StyledText>
-          </Grid>
-          <Grid item>
-            <StyledText color='#59443F'>{employeeData.description}</StyledText>
           </Grid>
         </Grid>
         {!carouselError && <MainEmployeesCarousel employeesCarouselData={employeesCarouselData} />}
