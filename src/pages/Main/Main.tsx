@@ -7,6 +7,7 @@ import MainAdvantages from 'pages/Main/components/MainAdvantages/MainAdvantages'
 import ContactsSection from 'components/ContactsSection/ContactsSection';
 
 const Main: FC = () => {
+  console.log(1);
   return (
     <>
       <MainCarousel />
