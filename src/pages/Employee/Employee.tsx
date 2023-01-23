@@ -18,6 +18,8 @@ const Employee = () => {
   const [id, setId] = useState<string>('');
   const [isOpen, setIsOpen] = useState(false);
   const isWider480 = useMediaQuery('(max-width:480px)');
+  const isWider769 = useMediaQuery('(max-width:769px)');
+
   const handleModalAction = (): void => setIsOpen(!isOpen);
   const {
     data: employeeData,
@@ -66,8 +68,12 @@ const Employee = () => {
       </>
     ) : (
       <Grid container gap={2}>
-        <Skeleton variant='rectangular' width={55} height={60} />
-        <Skeleton variant='rectangular' width='100%' height={400} />
+        {!isWider769 && (
+          <>
+            <Skeleton variant='rectangular' width={55} height={60} />
+            <Skeleton variant='rectangular' width='100%' height={400} />
+          </>
+        )}
       </Grid>
     );
   };
