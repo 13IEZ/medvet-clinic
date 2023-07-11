@@ -10,42 +10,48 @@ interface IEmployeesCarouselData {
   employeesCarouselData: IEmployeesCarousel[] | undefined;
 }
 
-export const CustomLeftArrow: FC<ArrowProps> = ({ onClick }) => {
+export const CustomLeftArrow: FC<ArrowProps & { position?: string }> = ({ onClick, position }) => {
   return (
-    <div onClick={onClick} style={{ position: 'absolute', cursor: 'pointer', left: '-3%' }}>
+    <div
+      onClick={onClick}
+      style={{ position: 'absolute', cursor: 'pointer', left: position || '-3%' }}
+    >
       <img src={pref_arr} alt='previous arrow' />
     </div>
   );
 };
 
-export const CustomRightArrow: FC<ArrowProps> = ({ onClick }) => {
+export const CustomRightArrow: FC<ArrowProps & { position?: string }> = ({ onClick, position }) => {
   return (
-    <div onClick={onClick} style={{ position: 'absolute', right: '-3%', cursor: 'pointer' }}>
+    <div
+      onClick={onClick}
+      style={{ position: 'absolute', right: position || '-3%', cursor: 'pointer' }}
+    >
       <img src={next_arr} alt='next arrow' />
     </div>
   );
 };
 
-const MainEmployeesCarousel: FC<IEmployeesCarouselData> = ({ employeesCarouselData }) => {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 768 },
-      items: 3,
-    },
-    smallTablet: {
-      breakpoint: { max: 768, min: 481 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 481, min: 0 },
-      items: 1,
-    },
-  };
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 4,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 768 },
+    items: 3,
+  },
+  smallTablet: {
+    breakpoint: { max: 768, min: 481 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 481, min: 0 },
+    items: 1,
+  },
+};
 
+const MainEmployeesCarousel: FC<IEmployeesCarouselData> = ({ employeesCarouselData }) => {
   return employeesCarouselData ? (
     <Carousel
       customRightArrow={<CustomRightArrow />}

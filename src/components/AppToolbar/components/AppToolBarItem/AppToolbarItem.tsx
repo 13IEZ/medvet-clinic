@@ -13,7 +13,11 @@ interface IAppToolbarItem {
 
 const AppToolbarItem: FC<IAppToolbarItem> = ({ item }) => {
   const NoMaxWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
-    <Tooltip {...props} classes={{ popper: className }} />
+    <Tooltip {...props} classes={{ popper: className }}>
+      <Link to={item.key} style={{ textDecoration: 'none' }}>
+        <StyledNavButton>{item.title}</StyledNavButton>
+      </Link>
+    </Tooltip>
   ))({
     [`& .${tooltipClasses.tooltip}`]: {
       maxWidth: 'none',
@@ -37,7 +41,7 @@ const AppToolbarItem: FC<IAppToolbarItem> = ({ item }) => {
               >
                 {item.services &&
                   item.services.map(elem => (
-                    <AppToolServiceLink key={elem.key} to={elem.key}>
+                    <AppToolServiceLink key={elem.key} to='services'>
                       {elem.title}
                     </AppToolServiceLink>
                   ))}
