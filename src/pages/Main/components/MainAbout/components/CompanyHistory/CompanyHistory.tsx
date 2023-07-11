@@ -21,7 +21,7 @@ const CompanyHistory: FC = () => {
       </HistoryDiv>
       <StyledHistoryDescription>{historyData.text}</StyledHistoryDescription>
       <Grid container justifyContent='center'>
-        <JumpButton title='Читать далее' path='about' />
+        <JumpButton title='Читать далее' path='employees' />
       </Grid>
     </>
   ) : (

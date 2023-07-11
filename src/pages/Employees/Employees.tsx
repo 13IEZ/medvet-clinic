@@ -17,7 +17,7 @@ const Employees = () => {
 
   const getLeftBlockComponent = () => {
     return (
-      <>
+      <Grid container flexDirection='column' alignItems='center' marginBottom={isWider480 ? 3 : 0}>
         <StyledSectionTitle marginBottom={!isWider480 ? 2 : 5}>Коллектив</StyledSectionTitle>
         <StyledSubTitle
           sx={{ cursor: 'pointer' }}
@@ -31,7 +31,7 @@ const Employees = () => {
         >
           Специалисты
         </StyledSubTitle>
-      </>
+      </Grid>
     );
   };
 

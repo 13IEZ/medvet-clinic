@@ -36,7 +36,6 @@ const EmployeeCard: React.FC<IEmployeesCarousel> = ({
                   {getTextExperience(experience)}
                 </StyledText>
               </Grid>
-              {/*<Grid item container xs={!isWider420 ? 12 : 8} gap={1}>*/}
               <Grid item container xs={!isWider420 ? 12 : 8} gap={1}>
                 <Grid item xs={12}>
                   <StyledText style={{ fontSize: '1rem' }} color='#C3B9B5'>

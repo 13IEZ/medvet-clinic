@@ -13,6 +13,8 @@ import Contacts from 'pages/Contacts/Contacts';
 import Employees from 'pages/Employees/Employees';
 import Employee from 'pages/Employee/Employee';
 import NotFound from 'pages/NotFound/NotFound';
+import Promotions from 'pages/Promotions/Promotions';
+import Services from 'pages/Services/Services';
 
 const App: FC = () => {
   return (
@@ -28,7 +30,8 @@ const App: FC = () => {
         </Route>
         <Route path='blog' element={<InProgress />} />
         <Route path='about' element={<InProgress />} />
-        <Route path='news-promotions' element={<InProgress />} />
+        <Route path='promotions' element={<Promotions />} />
+        <Route path='services' element={<Services />} />
         <Route path='contacts' element={<Contacts />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
